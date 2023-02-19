@@ -1,0 +1,137 @@
+.method private hidebysig static 
+		void getdqfp (
+			string sksbkl,
+			string fplxdm,
+			string sksbbh,
+			string nsrsbh,
+			[out] string& dqfpdm,
+			[out] string& dqfphm,
+			[out] string& zsyfs,
+			[out] string& xml,
+			[out] string& returncode,
+			[out] string& returnmsg
+		) cil managed 
+	{
+		// Header Size: 12 bytes
+		// Code Size: 370 (0x172) bytes
+		// LocalVarSig Token: 0x110002F2 RID: 754
+		.maxstack 24
+		.locals init (
+			[0] uint32,
+			[1] class [System.Xml]System.Xml.XmlDocument,
+			[2] int32
+		)
+
+		/* 0x00026C70 73F700000A   */ IL_0000: newobj    instance void [System.Xml]System.Xml.XmlDocument::.ctor()
+		/* 0x00026C75 FE0E0100     */ IL_0005: stloc     V_1
+		/* 0x00026C79 FE090700     */ IL_0009: ldarg     xml
+		/* 0x00026C7D 2009000000   */ IL_000D: ldc.i4    9
+		/* 0x00026C82 8D81000001   */ IL_0012: newarr    [mscorlib]System.String
+		/* 0x00026C87 25           */ IL_0017: dup
+		/* 0x00026C88 2000000000   */ IL_0018: ldc.i4    0
+		/* 0x00026C8D 72B9BD0070   */ IL_001D: ldstr     "<?xml version=\"1.0\" encoding=\"gbk\"?><business id=\"GPXXCX\" comment=\"购票信息查询\"> <body>  <input>   <nsrsbh>"
+		/* 0x00026C92 A2           */ IL_0022: stelem.ref
+		/* 0x00026C93 25           */ IL_0023: dup
+		/* 0x00026C94 2001000000   */ IL_0024: ldc.i4    1
+		/* 0x00026C99 FE090300     */ IL_0029: ldarg     nsrsbh
+		/* 0x00026C9D A2           */ IL_002D: stelem.ref
+		/* 0x00026C9E 25           */ IL_002E: dup
+		/* 0x00026C9F 2002000000   */ IL_002F: ldc.i4    2
+		/* 0x00026CA4 726E890070   */ IL_0034: ldstr     "</nsrsbh>   <sksbbh>"
+		/* 0x00026CA9 A2           */ IL_0039: stelem.ref
+		/* 0x00026CAA 25           */ IL_003A: dup
+		/* 0x00026CAB 2003000000   */ IL_003B: ldc.i4    3
+		/* 0x00026CB0 FE090200     */ IL_0040: ldarg     sksbbh
+		/* 0x00026CB4 A2           */ IL_0044: stelem.ref
+		/* 0x00026CB5 25           */ IL_0045: dup
+		/* 0x00026CB6 2004000000   */ IL_0046: ldc.i4    4
+		/* 0x00026CBB 7298890070   */ IL_004B: ldstr     "</sksbbh>   <sksbkl>"
+		/* 0x00026CC0 A2           */ IL_0050: stelem.ref
+		/* 0x00026CC1 25           */ IL_0051: dup
+		/* 0x00026CC2 2005000000   */ IL_0052: ldc.i4    5
+		/* 0x00026CC7 FE090000     */ IL_0057: ldarg     sksbkl
+		/* 0x00026CCB A2           */ IL_005B: stelem.ref
+		/* 0x00026CCC 25           */ IL_005C: dup
+		/* 0x00026CCD 2006000000   */ IL_005D: ldc.i4    6
+		/* 0x00026CD2 72C2890070   */ IL_0062: ldstr     "</sksbkl>   <fplxdm>"
+		/* 0x00026CD7 A2           */ IL_0067: stelem.ref
+		/* 0x00026CD8 25           */ IL_0068: dup
+		/* 0x00026CD9 2007000000   */ IL_0069: ldc.i4    7
+		/* 0x00026CDE FE090100     */ IL_006E: ldarg     fplxdm
+		/* 0x00026CE2 A2           */ IL_0072: stelem.ref
+		/* 0x00026CE3 25           */ IL_0073: dup
+		/* 0x00026CE4 2008000000   */ IL_0074: ldc.i4    8
+		/* 0x00026CE9 72DE8D0070   */ IL_0079: ldstr     "</fplxdm>  </input> </body></business>"
+		/* 0x00026CEE A2           */ IL_007E: stelem.ref
+		/* 0x00026CEF 281601000A   */ IL_007F: call      string [mscorlib]System.String::Concat(string[])
+		/* 0x00026CF4 51           */ IL_0084: stind.ref
+		/* 0x00026CF5 FE090700     */ IL_0085: ldarg     xml
+		/* 0x00026CF9 FE090700     */ IL_0089: ldarg     xml
+		/* 0x00026CFD 51           */ IL_008D: stind.ref
+		/* 0x00026CFE 28C8020006   */ IL_008E: call      string pyk.ukeycore.biz.util.K::Op(string)
+		/* 0x00026D03 51           */ IL_0093: stind.ref
+		/* 0x00026D04 FE0C0100     */ IL_0094: ldloc     V_1
+		/* 0x00026D08 FE090700     */ IL_0098: ldarg     xml
+		/* 0x00026D0C 51           */ IL_009C: stind.ref
+		/* 0x00026D0D 6F2001000A   */ IL_009D: callvirt  instance void [System.Xml]System.Xml.XmlDocument::LoadXml(string)
+		/* 0x00026D12 FE090800     */ IL_00A2: ldarg     returncode
+		/* 0x00026D16 FE0C0100     */ IL_00A6: ldloc     V_1
+		/* 0x00026D1A 7268290070   */ IL_00AA: ldstr     "/business/body/output/returncode"
+		/* 0x00026D1F 6F2301000A   */ IL_00AF: callvirt  instance class [System.Xml]System.Xml.XmlNode [System.Xml]System.Xml.XmlNode::SelectSingleNode(string)
+		/* 0x00026D24 28DF020006   */ IL_00B4: call      string pyk.ukeycore.biz.util.S::_NotNull(class [System.Xml]System.Xml.XmlNode)
+		/* 0x00026D29 51           */ IL_00B9: stind.ref
+		/* 0x00026D2A FE090900     */ IL_00BA: ldarg     returnmsg
+		/* 0x00026D2E FE0C0100     */ IL_00BE: ldloc     V_1
+		/* 0x00026D32 72AA290070   */ IL_00C2: ldstr     "/business/body/output/returnmsg"
+		/* 0x00026D37 6F2301000A   */ IL_00C7: callvirt  instance class [System.Xml]System.Xml.XmlNode [System.Xml]System.Xml.XmlNode::SelectSingleNode(string)
+		/* 0x00026D3C 28DF020006   */ IL_00CC: call      string pyk.ukeycore.biz.util.S::_NotNull(class [System.Xml]System.Xml.XmlNode)
+		/* 0x00026D41 51           */ IL_00D1: stind.ref
+		/* 0x00026D42 7239070070   */ IL_00D2: ldstr     "0"
+		/* 0x00026D47 FE090800     */ IL_00D7: ldarg     returncode
+		/* 0x00026D4B 51           */ IL_00DB: stind.ref
+		/* 0x00026D4C 28FF00000A   */ IL_00DC: call      instance bool [mscorlib]System.String::Equals(string)
+		/* 0x00026D51 397C000000   */ IL_00E1: brfalse   IL_0162
+
+		/* 0x00026D56 FE090400     */ IL_00E6: ldarg     dqfpdm
+		/* 0x00026D5A FE0C0100     */ IL_00EA: ldloc     V_1
+		/* 0x00026D5E 7288BE0070   */ IL_00EE: ldstr     "/business/body/output/dqfpdm"
+		/* 0x00026D63 6F2301000A   */ IL_00F3: callvirt  instance class [System.Xml]System.Xml.XmlNode [System.Xml]System.Xml.XmlNode::SelectSingleNode(string)
+		/* 0x00026D68 28DF020006   */ IL_00F8: call      string pyk.ukeycore.biz.util.S::_NotNull(class [System.Xml]System.Xml.XmlNode)
+		/* 0x00026D6D 51           */ IL_00FD: stind.ref
+		/* 0x00026D6E FE090500     */ IL_00FE: ldarg     dqfphm
+		/* 0x00026D72 FE0C0100     */ IL_0102: ldloc     V_1
+		/* 0x00026D76 72C2BE0070   */ IL_0106: ldstr     "/business/body/output/dqfphm"
+		/* 0x00026D7B 6F2301000A   */ IL_010B: callvirt  instance class [System.Xml]System.Xml.XmlNode [System.Xml]System.Xml.XmlNode::SelectSingleNode(string)
+		/* 0x00026D80 28DF020006   */ IL_0110: call      string pyk.ukeycore.biz.util.S::_NotNull(class [System.Xml]System.Xml.XmlNode)
+		/* 0x00026D85 51           */ IL_0115: stind.ref
+		/* 0x00026D86 FE090600     */ IL_0116: ldarg     zsyfs
+		/* 0x00026D8A FE0C0100     */ IL_011A: ldloc     V_1
+		/* 0x00026D8E 72FCBE0070   */ IL_011E: ldstr     "/business/body/output/zsyfs"
+		/* 0x00026D93 6F2301000A   */ IL_0123: callvirt  instance class [System.Xml]System.Xml.XmlNode [System.Xml]System.Xml.XmlNode::SelectSingleNode(string)
+		/* 0x00026D98 28DF020006   */ IL_0128: call      string pyk.ukeycore.biz.util.S::_NotNull(class [System.Xml]System.Xml.XmlNode)
+		/* 0x00026D9D 51           */ IL_012D: stind.ref
+		/* 0x00026D9E FE090600     */ IL_012E: ldarg     zsyfs
+		/* 0x00026DA2 51           */ IL_0132: stind.ref
+		/* 0x00026DA3 288300000A   */ IL_0133: call      bool [mscorlib]System.String::IsNullOrEmpty(string)
+		/* 0x00026DA8 3A14000000   */ IL_0138: brtrue    IL_0151
+
+		/* 0x00026DAD FE090600     */ IL_013D: ldarg     zsyfs
+		/* 0x00026DB1 51           */ IL_0141: stind.ref
+		/* 0x00026DB2 28B300000A   */ IL_0142: call      int32 [mscorlib]System.Int32::Parse(string)
+		/* 0x00026DB7 2000000000   */ IL_0147: ldc.i4    0
+		/* 0x00026DBC 3D10000000   */ IL_014C: bgt       IL_0161
+
+		/* 0x00026DC1 7234BF0070   */ IL_0151: ldstr     "剩余发票数量为0"
+		/* 0x00026DC6 72F40E0070   */ IL_0156: ldstr     "-1"
+		/* 0x00026DCB 7326040006   */ IL_015B: newobj    instance void pyk.ukeycore.biz.exception.BizException::.ctor(string, string)
+		/* 0x00026DD0 7A           */ IL_0160: throw
+
+		/* 0x00026DD1 2A           */ IL_0161: ret
+
+		/* 0x00026DD2 FE090900     */ IL_0162: ldarg     returnmsg
+		/* 0x00026DD6 51           */ IL_0166: stind.ref
+		/* 0x00026DD7 FE090800     */ IL_0167: ldarg     returncode
+		/* 0x00026DDB 51           */ IL_016B: stind.ref
+		/* 0x00026DDC 7326040006   */ IL_016C: newobj    instance void pyk.ukeycore.biz.exception.BizException::.ctor(string, string)
+		/* 0x00026DE1 7A           */ IL_0171: throw
+	} // end of method FPKJ_JDC::getdqfp
